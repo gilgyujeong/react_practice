@@ -15,12 +15,12 @@ const FETCH_BOARDS = gql`
 `
     export default function StaticRoutingMovedPage() {
         const { data } = useQuery<Pick<IQuery, "fetchBoards">, IQueryFetchBoardsArgs>(FETCH_BOARDS);
-    }
+
 
     return(
         <div>
             {data?.fetchBoards.map((el) => (
-                <CommentItem key={el._id} />
+                <CommentItem key={el._id} el={el} />
             )
         )}
         </div>

@@ -1,15 +1,22 @@
-export default function CommentItem(): JSX.Element {
-    
+import { useState } from "react"
+
+export default function CommentItem(props: any): JSX.Element {
+    const [isEdit, setIsEdit] = useState(false);
+
+    const onClickEdit = (): void => {
+        setIsEdit(true);
+    }
+
     return (
         <div>
-            {!myIndex[index] ? (
-                <div key={el._id}>
-                    <span style={{ margin: "10px"}}>{el.title}</span>
-                    <span style={{ margin: "10px"}}>{el.writer}</span>
-                    <button id={String(index)} onClick={onClickEdit}>수정하기</button>
+            {!isEdit ? (
+                <div>
+                    <span style={{ margin: "10px"}}>{props.el.title}</span>
+                    <span style={{ margin: "10px"}}>{props.el.writer}</span>
+                    <button onClick={onClickEdit}>수정하기</button>
                 </div>
                 ) : (
-                    <input type="text" key={el._id} />
+                    <input type="text" />
                 )}
         </div>
     )
