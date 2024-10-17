@@ -31,7 +31,7 @@ export default function GraphqlMutationPage() {
         console.log(result)
     }
 
-    const onChangeInputs = (event) => {
+    const onChangeInputs = (event: any) => {
         setInputs((prev) => ({
             ...prev,
             [event.target.id]: event.target.value
