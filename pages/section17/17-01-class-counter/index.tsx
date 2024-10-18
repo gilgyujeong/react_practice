@@ -5,7 +5,7 @@ export default class ClassCounterPage extends Component {
         count: 0,
     }
 
-    onClickCountUp() {
+    onClickCountUp = () => {
         this.setState({
             count: 1,
         })
