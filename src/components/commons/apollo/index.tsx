@@ -1,5 +1,5 @@
 import { ApolloClient, InMemoryCache, ApolloProvider, ApolloLink } from '@apollo/client';
-import createUploadLink from 'apollo-upload-client/createUploadLink.mjs'
+import { createUploadLink } from 'apollo-upload-client'
 
 interface IApolloSettingProps {
     children: JSX.Element;
