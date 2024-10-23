@@ -14,7 +14,12 @@ const FETCH_BOARDS = gql`
 `
 
 export default function FetchPolicyExample(): JSX.Element {
-    const { data } = useQuery<Pick<IQuery, "fetchBoards">, IQueryFetchBoardsArgs>(FETCH_BOARDS)
+    const { data } = useQuery<Pick<IQuery, "fetchBoards">, IQueryFetchBoardsArgs>(
+        FETCH_BOARDS,
+        {
+            fetchPolicy: "network-only",
+        }
+    )
 
 
     return(
