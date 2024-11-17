@@ -2,6 +2,8 @@ import { useForm } from "react-hook-form"
 import { wrapFormAsync } from "../../../src/commons/libraries/asyncFunc"
 import { yupResolver } from '@hookform/resolvers/yup'
 import { schema } from "./02-after.validation"
+import Input01 from "../../../src/components/inputs/01"
+import Button01 from "../../../src/components/buttons/01"
 
 
 interface IFormData {
@@ -33,14 +35,14 @@ export default function GraphqlMutationPage(): JSX.Element {
     // 한 줄일때는 괄호() 필요 없음
     return (
         <form onSubmit={wrapFormAsync(handleSubmit(onClickSubmit))}>
-            작성자: <input type="text" {...register("writer")}/>
+            작성자: <Input01 register={register("writer")} />
             <div style={{ color: "red"}}>{formState.errors.writer?.message}</div>
-            제목: <input type="text" {...register("title")} />
+            제목: <Input01 register={register("title")} />
             <div style={{ color: "red"}}>{formState.errors.title?.message}</div>
-            내용: <input type="text" {...register("contents")} />
+            내용: <Input01 type="text" register={register("contents")} />
             <div style={{ color: "red"}}>{formState.errors.contents?.message}</div>
             {/* 주소: <input type="text" {...register("boardAddress.addressDetail")} /> */}
-            <button style={{ backgroundColor: formState.isValid ? "yellow" : ""}} type="submit">GRAPHQL-API 요청하기</button>
+            <Button01 title="등록하기" isActive={formState.isValid} />
         </form>
         
     )
