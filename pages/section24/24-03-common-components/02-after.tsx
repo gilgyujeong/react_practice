@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form"
 import { wrapFormAsync } from "../../../src/commons/libraries/asyncFunc"
 import { yupResolver } from '@hookform/resolvers/yup'
 import { schema } from "./02-after.validation"
-import Input01 from "../../../src/components/inputs/01"
+import Input01 from "../../../src/components/commons/inputs/01"
 import Button01 from "../../../src/components/buttons/01"
 
 
