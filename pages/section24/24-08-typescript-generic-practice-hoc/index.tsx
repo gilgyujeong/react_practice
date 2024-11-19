@@ -1,7 +1,8 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import type { ComponentType, ReactElement } from "react";
 
-export const 로그인체크 = (컴포넌트: any) => (프롭스: any) => {
+export const 로그인체크 = (컴포넌트: () => JSX.Element) => <P extends Record<string, unknown>>(프롭스: P): ReactElement<P> => {
     const router = useRouter()
     
     useEffect(() => {
